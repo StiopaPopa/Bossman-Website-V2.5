@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="register.css">
+    <script src="register.js"></script>
+</head>
+<body>
+    <div id="register_div">
+        <form class="box" id="signup-form">
+            <h1>Register</h1>
+            <input type="text" id="username_field" placeholder="Username" required autocomplete="off" onKeyDown="if(event.keyCode === 32)
+            return false;">
+            <input type="email" id="email_field" placeholder="Email" required autocomplete="off" onKeyDown="if(event.keyCode === 32)
+            return false;">
+            <input type="password" id="password_field" placeholder="Password (6 characters min)" required autocomplete="off" minlength="6" onKeyDown="if(event.keyCode === 32)
+            return false;">
+            <label for="select_sector">Select a sector</label>
+            <br><br>
+            <select id="select_sector">
+                <option value="Army">Army: traditional comment raids with strategic messages</option>
+                <option value="Navy">Navy: raid the DMs of the target</option>
+                <option value="Airforce">Air Force: find the target's allies and wreck havoc upon them</option>
+                <option value="Marinecorps">Marine Corps: design intricate ASCII art and comment it in the raids</option>
+                <option value="CIA">CIA: identify the target's business affiliates and destroy them</option>
+            </select>
+            <br><br>
+            <li>
+                <input required id="check" type="checkbox" value="termsconditions" />
+                <label for="check">I Agree to the <a target="_blank" href="terms.html"><u>Terms and Conditions</u></a></label>
+            </li>
+            <button>Register</button>
+            <a href="login.html"><p>Have an account? <strong><u>Login</u></strong></p></a>
+        </form>
+    </div>
+
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-analytics.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "",
+        authDomain: "",
+        databaseURL: "",
+        projectId: "",
+        appId: "",
+        measurementId: ""
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    // make auth and firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore(); 
+    </script>
+</body>
+</html>

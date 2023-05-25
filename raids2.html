@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raids</title>
+    <link rel="stylesheet" href="raids2.css">
+    <script src="raids2.js"></script>
+</head>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="raids1.html">RAIDS</a></li>
+            <li><a href="https://www.shopify.com/">STORE</a></li>
+            <li><a id="logout">LOGOUT</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+
+    <button id="newUpdate" class="button">New Update</button>
+    <button id="newRaid" class="button">New Raid</button>
+
+
+    <div id="newUpdateModal" class="modal">
+        <div class="modal-content">
+            <span id="closeUpdateModalButton">&times;</span>
+            <form id="postUpdate">
+                <input type="text" id="updateTitle" name="updateTitle" placeholder="Update Title">
+                <textarea rows="4" cols="50" id="updateContent" placeholder="Update Content"></textarea>
+                <button id="postUpdateButton">Post Update</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="raidUpdatesSection">
+        <ul id="raidUpdates">
+            
+        </ul>
+    </div>
+
+    <div id="newRaidModal" class="modal">
+        <div class="modal-content">
+            <span id="closeRaidModalButton">&times;</span>
+            <form id="postRaid">    
+                <button id="postRaidButton">Post Raid</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-storage.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src=""></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "",
+        authDomain: "",
+        databaseURL: "",
+        projectId: "",
+        appId: "",
+        measurementId: ""
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    // make auth and firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    const storage = firebase.storage();
+    </script>
+</body>
+</html>
